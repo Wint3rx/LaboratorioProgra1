@@ -23,11 +23,6 @@ namespace LaboratorioProgra1.Laboratorio
             clasificaciones.Add("M - Maduro");
             clasificaciones.Add("AO - Solo adultos");
 
-            foreach (string clasificacion in clasificaciones)
-            {
-                Console.WriteLine(clasificacion);
-            }
-
             return ($"La clasificacion del juego es: {clasificacion}");
         }
     }
