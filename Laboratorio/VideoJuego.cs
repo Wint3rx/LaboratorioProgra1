@@ -99,7 +99,7 @@ namespace LaboratorioProgra1.Laboratorio
             }
             else
             {
-                
+                Console.WriteLine("No hay partida en curso.");
             }
         }
 
