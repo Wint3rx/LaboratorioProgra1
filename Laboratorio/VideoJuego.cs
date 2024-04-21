@@ -6,11 +6,6 @@ using System.Threading.Tasks;
 
 namespace LaboratorioProgra1.Laboratorio
 {
-    /// <summary>
-    /// Esta Clase Padre tiene 4 errores lógicos
-    /// debe de encontrarlos y corregirlos
-    /// documente los errores encontrados y las correcciones realizadas
-    /// </summary>
     internal class VideoJuego
     {
         private string titulo;
@@ -36,15 +31,15 @@ namespace LaboratorioProgra1.Laboratorio
             get { return calificacion; }
             set
             {
-                //  La calificación debe estar entre 0 y 10
-                if (value > 0 || value < 11)
+                if (value > 0 && value < 11)
                 {
                     calificacion = value;
-                } else
+                }
+                else
                 {
                     Console.WriteLine("La calificación debe estar entre 0 y 10");
                 }
-                    
+
             }
         }
 
@@ -53,8 +48,14 @@ namespace LaboratorioProgra1.Laboratorio
             get { return anioLanzamiento; }
             set
             {
-                // Error lógico: El año de lanzamiento 
-                anioLanzamiento = value;
+                if (value <= 2024)
+                {
+                    anioLanzamiento = value;
+                }
+                else
+                {
+                    Console.WriteLine("No estamos en el futuro amigo >:)");
+                }
             }
         }
 
@@ -80,16 +81,20 @@ namespace LaboratorioProgra1.Laboratorio
 
         public void DetenerPartida()
         {
-            // Error lógico
+            while (true)
+            {
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                if (keyInfo.Key == ConsoleKey.Escape)
+                    break;
+            }
             Console.WriteLine("Partida detenida.");
         }
 
         public void TerminarJuego()
         {
-            // Error lógico
             if (jugando)
             {
-                
+                jugando = false;
                 Console.WriteLine("Juego terminado.");
             }
             else
