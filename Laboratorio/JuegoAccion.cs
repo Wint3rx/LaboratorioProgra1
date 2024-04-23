@@ -10,7 +10,7 @@ namespace LaboratorioProgra1.Laboratorio
     {
         public string clasificacion {  get; set; }
         public bool shooter { get; set; }
-        public string Detallesshooter()
+        public string Detalleshooter()
         {
             return ($"es shooter: {shooter}");
         }
@@ -23,12 +23,26 @@ namespace LaboratorioProgra1.Laboratorio
             clasificaciones.Add("M - Maduro");
             clasificaciones.Add("AO - Solo adultos");
 
-            foreach (string clasificacion in clasificaciones)
+            Console.WriteLine("Clasificaciones disponibles:");
+            for (int i = 0; i < clasificaciones.Count; i++)
             {
-                Console.WriteLine(clasificacion);
+                Console.WriteLine($"{i + 1}. {clasificaciones[i]}");
             }
 
-            return ($"La clasificacion del juego es: {clasificacion}");
+            Console.Write("\nIngrese el número de la clasificación que desea elegir: ");
+            int indiceElegido = int.Parse(Console.ReadLine());
+
+            if (indiceElegido >= 1 && indiceElegido <= clasificaciones.Count)
+            {
+                string clasificacionElegida = clasificaciones[indiceElegido - 1];
+                Console.WriteLine($"\nHa elegido la clasificación: {clasificacionElegida}");
+                return clasificacionElegida;
+            }
+            else
+            {
+                Console.WriteLine("\nOpción no válida. Por favor, ingrese un número válido.");
+                return string.Empty;
+            }
         }
     }
 }
