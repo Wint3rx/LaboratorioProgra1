@@ -1,4 +1,5 @@
-﻿using LaboratorioProgra1.EjemploPolimorfismo;
+﻿using LaboratorioProgra1.Deportes;
+using LaboratorioProgra1.EjemploPolimorfismo;
 using LaboratorioProgra1.EjemploPolimorfismo.Heredados;
 using LaboratorioProgra1.Laboratorio;
 
@@ -24,6 +25,22 @@ static void Laboratorio()
     videoJuego.MostrarInformacion();
 }
 
+static void juegodeportes()
+{
+    futbol futbol = new futbol();
+    futbol.Titulo = "FIFA 2024";
+    futbol.Desarrolladora = "EA SPORTS";
+    futbol.Calificacion = 5;
+    futbol.AnioLanzamiento = 2024;
+    futbol.MedidasCancha();
+
+    baloncesto Baloncesto = new baloncesto();
+    Baloncesto.Titulo = "NBA 2K24";
+    Baloncesto.Desarrolladora = "EA SPORTS";
+    Baloncesto.Calificacion = 7;
+    Baloncesto.AnioLanzamiento = 2024;
+    Baloncesto.MedidasCancha();
+}
 //Laboratorio();
 VideoJuego.listaDeJuegos();
 

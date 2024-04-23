@@ -14,5 +14,9 @@ namespace LaboratorioProgra1.Laboratorio
         {
             return ($"El deporte del juego es: {Deporte} Tiene multijugador: {Multiplayer}");
         }
+        public virtual void MedidasCancha()
+        {
+            Console.WriteLine("Dependiendo del deporte son las medidas");
+        }
     }
 }
